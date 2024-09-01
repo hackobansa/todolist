@@ -4,17 +4,29 @@ var item = document.querySelector("#item");
 
 submitTodo.addEventListener('click', () => {
     var list = document.createElement('li');
-    list.appendChild(document.createTextNode(
-        `${getInput.value}`
-    ));
-
-   item.style.listStyleType = "none";
-
     
+    // Create a text node with the input value
+    var todoText = document.createTextNode(`${getInput.value}`);
+    
+    // Create a delete button
+    var deleteBtn = document.createElement('button');
+    deleteBtn.innerText = "Delete";
+    deleteBtn.style.marginLeft = "10px"; // Add some space between the text and the button
 
-   item.appendChild(list);
+    // Add an event listener to the delete button to remove the list item
+    deleteBtn.addEventListener('click', () => {
+        item.removeChild(list);
+    });
 
-    //clear fields
+    // Append the text node and delete button to the list item
+    list.appendChild(todoText);
+    list.appendChild(deleteBtn);
+
+    item.style.listStyleType = "none";
+
+    // Append the list item to the todo list
+    item.appendChild(list);
+
+    // Clear the input field
     getInput.value = "";
-})
-
+});
