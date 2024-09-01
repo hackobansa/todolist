@@ -1,86 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body{
+body {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 /* Style the close button */
 .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px;
 }
 
 .close:hover {
-    background-color: #f44336;
-    color: white;
+  background-color: #f44336;
+  color: white;
 }
 
 .todo {
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: right;
-    width: 90%; /* Default width */
-    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .item li {
-    list-style: none;
+  list-style: none;
 }
 
-/* Media Queries */
-
-/* Small devices (phones, 600px and below) */
-@media (max-width: 600px) {
-    .todo {
-        width: 100%; /* Full width on small devices */
-        padding: 10px;
-    }
-    
-    .close {
-        padding: 8px 12px;
-    }
+/* Media query for small devices (phones, 320px to 480px) */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .todo {
+    width: 80%;
+  }
 }
 
-/* Medium devices (tablets, 768px and below) */
-@media (max-width: 768px) {
-    .todo {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .close {
-        padding: 10px 14px;
-    }
+/* Media query for medium devices (tablets, 481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  .todo {
+    width: 60%;
+  }
 }
 
-/* Large devices (desktops, 1024px and below) */
-@media (max-width: 1024px) {
-    .todo {
-        width: 70%;
-        padding: 20px;
-    }
-    
-    .close {
-        padding: 12px 16px;
-    }
+/* Media query for large devices (desktops, 769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .todo {
+    width: 40%;
+  }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .todo {
-        width: 60%;
-    }
-    
-    .close {
-        padding: 14px 18px;
-    }
+/* Media query for extra large devices (large desktops, 1025px and up) */
+@media screen and (min-width: 1025px) {
+  body {
+    font-size: 20px;
+  }
+  .todo {
+    width: 30%;
+  }
+}
+
+/* Media query targeting Android devices (optional) */
+@media screen and (min-width: 320px) and (max-width: 768px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  body {
+    background-color: red;
+  }
 }
